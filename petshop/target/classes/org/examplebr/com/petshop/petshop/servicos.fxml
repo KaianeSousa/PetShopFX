@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
@@ -17,9 +19,9 @@
    <children>
       <AnchorPane prefHeight="557.0" prefWidth="766.0">
          <children>
-            <AnchorPane prefHeight="550.0" prefWidth="344.0" styleClass="left-form" stylesheets="@../../../../../css/style.css">
+            <AnchorPane prefHeight="550.0" prefWidth="281.0" styleClass="left-form" stylesheets="@../../../../../css/style.css">
                <children>
-                  <ImageView fitHeight="231.0" fitWidth="279.0" layoutX="49.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="134.0" fitWidth="170.0" layoutX="61.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                      <cursor>
                         <Cursor fx:constant="E_RESIZE" />
                      </cursor>
@@ -30,21 +32,21 @@
                         <Image url="@../../../../../img/cat-dog.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="140.0" layoutY="275.0" text="PetShop" textFill="#faad43">
+                  <Label layoutX="92.0" layoutY="182.0" text="PetShop" textFill="#faad43">
                      <font>
                         <Font name="Century Gothic" size="24.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="343.0" prefHeight="550.0" prefWidth="409.0" styleClass="right-form" stylesheets="@../../../../../css/style.css">
+            <AnchorPane layoutX="279.0" prefHeight="550.0" prefWidth="475.0" styleClass="right-form" stylesheets="@../../../../../css/style.css">
                <children>
-                  <Label layoutX="115.0" layoutY="44.0" text="Insira seus dados" textAlignment="CENTER">
+                  <Label layoutX="109.0" layoutY="37.0" text="Insira os dados do seu pet" textAlignment="CENTER">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Button fx:id="buttonCadastrar" layoutX="129.0" layoutY="424.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="123.0" styleClass="buttom-login" text="Cadastrar" textOverrun="WORD_ELLIPSIS">
+                  <Button fx:id="buttonCadastrar" layoutX="187.0" layoutY="461.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="123.0" styleClass="buttom-login" text="Registrar" textOverrun="WORD_ELLIPSIS">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>
@@ -52,31 +54,65 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <TextField fx:id="textNome" layoutX="24.0" layoutY="131.0" prefHeight="38.0" prefWidth="333.0" promptText="Nome">
+                  <TextField id="textNome" fx:id="textNome" layoutX="73.0" layoutY="100.0" prefHeight="38.0" prefWidth="150.0" promptText="Nome">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="textEmail" layoutX="23.0" layoutY="293.0" prefHeight="38.0" prefWidth="334.0" promptText="Email">
+                  <TextField id="textRaca" fx:id="textEndereco" layoutX="291.0" layoutY="100.0" prefHeight="38.0" prefWidth="150.0" promptText="Raça">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="textSenha" layoutX="23.0" layoutY="354.0" prefHeight="38.0" prefWidth="334.0" promptText="Senha">
+                  <TextField id="textSexo" fx:id="textTelefone" layoutX="291.0" layoutY="155.0" prefHeight="38.0" prefWidth="150.0" promptText="Idade">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="textEndereco" layoutX="24.0" layoutY="186.0" prefHeight="38.0" prefWidth="333.0" promptText="Endereço">
+                  <Label layoutX="21.0" layoutY="109.0" text="Nome">
                      <font>
                         <Font size="14.0" />
                      </font>
-                  </TextField>
-                  <TextField fx:id="textTelefone" layoutX="23.0" layoutY="236.0" prefHeight="38.0" prefWidth="334.0" promptText="Telefone">
+                  </Label>
+                  <Label layoutX="252.0" layoutY="109.0" text="Raça">
                      <font>
                         <Font size="14.0" />
                      </font>
-                  </TextField>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="164.0" text="Sexo">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox id="generoBox" layoutX="73.0" layoutY="155.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione" />
+                  <Label layoutX="249.0" layoutY="164.0" text="Idade">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="202.0" layoutY="223.0" text="Serviços" textAlignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ComboBox id="servicosBox" layoutX="73.0" layoutY="265.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione o serviço" />
+                  <DatePicker layoutX="73.0" layoutY="319.0" prefHeight="38.0" prefWidth="150.0" />
+                  <Label layoutX="21.0" layoutY="328.0" text="Data">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="274.0" text="Serviços">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox id="servicosBox" layoutX="291.0" layoutY="265.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione o horário" />
+                  <Label layoutX="251.0" layoutY="274.0" text="Hora">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children>
                <cursor>
                   <Cursor fx:constant="CROSSHAIR" />
