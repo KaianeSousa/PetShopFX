@@ -15,13 +15,14 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.CadastroFXController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.ServicosFXController">
+
    <children>
       <AnchorPane prefHeight="557.0" prefWidth="766.0">
          <children>
-            <AnchorPane prefHeight="550.0" prefWidth="281.0" styleClass="left-form" stylesheets="@../../../../../css/style.css">
+            <AnchorPane prefHeight="550.0" prefWidth="300.0" styleClass="left-form" stylesheets="@../../../../../css/style.css">
                <children>
-                  <ImageView fitHeight="134.0" fitWidth="170.0" layoutX="61.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="logo" fitHeight="82.0" fitWidth="272.0" layoutX="17.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
                      <cursor>
                         <Cursor fx:constant="E_RESIZE" />
                      </cursor>
@@ -29,24 +30,19 @@
                         <Glow />
                      </effect>
                      <image>
-                        <Image url="@../../../../../img/cat-dog.png" />
+                        <Image url="@../../../../../img/pet.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="92.0" layoutY="182.0" text="PetShop" textFill="#faad43">
-                     <font>
-                        <Font name="Century Gothic" size="24.0" />
-                     </font>
-                  </Label>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="279.0" prefHeight="550.0" prefWidth="475.0" styleClass="right-form" stylesheets="@../../../../../css/style.css">
+            <AnchorPane id="right-form" layoutX="300.0" prefHeight="550.0" prefWidth="454.0" styleClass="right-form" stylesheets="@../../../../../css/style.css">
                <children>
-                  <Label layoutX="109.0" layoutY="37.0" text="Insira os dados do seu pet" textAlignment="CENTER">
+                  <Label layoutX="135.0" layoutY="35.0" text="Insira os dados do seu pet" textAlignment="CENTER">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Button fx:id="buttonCadastrar" layoutX="187.0" layoutY="461.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="123.0" styleClass="buttom-login" text="Registrar" textOverrun="WORD_ELLIPSIS">
+                  <Button id="button-registro" fx:id="buttonCadastrar" layoutX="160.0" layoutY="447.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="170.0" styleClass="button-registro" text="Registrar" textOverrun="WORD_ELLIPSIS">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>
@@ -54,61 +50,61 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <TextField id="textNome" fx:id="textNome" layoutX="73.0" layoutY="100.0" prefHeight="38.0" prefWidth="150.0" promptText="Nome">
+                  <TextField id="textNome" fx:id="textNome" layoutX="98.0" layoutY="100.0" prefHeight="38.0" prefWidth="123.0" promptText="Nome">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField id="textRaca" fx:id="textEndereco" layoutX="291.0" layoutY="100.0" prefHeight="38.0" prefWidth="150.0" promptText="Raça">
+                  <TextField id="textRaca" fx:id="textRaca" layoutX="305.0" layoutY="100.0" prefHeight="38.0" prefWidth="123.0" promptText="Raça">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField id="textSexo" fx:id="textTelefone" layoutX="291.0" layoutY="155.0" prefHeight="38.0" prefWidth="150.0" promptText="Idade">
+                  <TextField id="textIdade" fx:id="textIdade" layoutX="356.0" layoutY="155.0" prefHeight="38.0" prefWidth="72.0" promptText="Idade">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="21.0" layoutY="109.0" text="Nome">
+                  <Label layoutX="23.0" layoutY="109.0" text="Nome">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="252.0" layoutY="109.0" text="Raça">
+                  <Label layoutX="266.0" layoutY="109.0" text="Raça">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="21.0" layoutY="164.0" text="Sexo">
+                  <Label id="label-genero" layoutX="25.0" layoutY="164.0" text="Gênero">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ComboBox id="generoBox" layoutX="73.0" layoutY="155.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione" />
-                  <Label layoutX="249.0" layoutY="164.0" text="Idade">
+                  <ComboBox id="generoBox" fx:id="generoBox" layoutX="100.0" layoutY="155.0" prefHeight="38.0" prefWidth="159.0" promptText="Selecione um gênero" />
+                  <Label layoutX="296.0" layoutY="164.0" text="Idade">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="202.0" layoutY="223.0" text="Serviços" textAlignment="CENTER">
+                  <Label layoutX="230.0" layoutY="225.0" text="Serviços" textAlignment="CENTER">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <ComboBox id="servicosBox" layoutX="73.0" layoutY="265.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione o serviço" />
-                  <DatePicker layoutX="73.0" layoutY="319.0" prefHeight="38.0" prefWidth="150.0" />
-                  <Label layoutX="21.0" layoutY="328.0" text="Data">
+                  <ComboBox id="servicosBox" fx:id="servicosBox" layoutX="85.0" layoutY="284.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione o serviço" />
+                  <DatePicker id="datebox" fx:id="datebox" layoutX="85.0" layoutY="348.0" prefHeight="38.0" prefWidth="150.0" />
+                  <Label layoutX="27.0" layoutY="357.0" text="Data">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="274.0" text="Serviços">
+                  <Label layoutX="23.0" layoutY="293.0" text="Serviços">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ComboBox id="servicosBox" layoutX="291.0" layoutY="265.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione o horário" />
-                  <Label layoutX="251.0" layoutY="274.0" text="Hora">
+                  <ComboBox id="horaBox" fx:id="horaBox" layoutX="292.0" layoutY="284.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione o horário" />
+                  <Label layoutX="251.0" layoutY="293.0" text="Hora">
                      <font>
                         <Font size="14.0" />
                      </font>

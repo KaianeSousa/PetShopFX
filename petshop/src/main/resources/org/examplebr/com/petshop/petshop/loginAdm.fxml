@@ -14,14 +14,14 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.LoginFXController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.LoginAdmFXController">
 
    <children>
       <AnchorPane prefHeight="557.0" prefWidth="766.0">
          <children>
             <AnchorPane prefHeight="550.0" prefWidth="372.0" styleClass="left-form" stylesheets="@../../../../../css/style.css">
                <children>
-                  <ImageView fitHeight="231.0" fitWidth="279.0" layoutX="47.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="logo" fitHeight="231.0" fitWidth="279.0" layoutX="53.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true" styleClass="logo">
                      <cursor>
                         <Cursor fx:constant="E_RESIZE" />
                      </cursor>
@@ -33,27 +33,22 @@
                      </image>
                   </ImageView>
                </children></AnchorPane>
-            <AnchorPane id="right-form" layoutX="370.0" prefHeight="550.0" prefWidth="382.0" styleClass="right-form" stylesheets="@../../../../../css/style.css">
+            <AnchorPane id="right-form-admin" layoutX="370.0" prefHeight="550.0" prefWidth="382.0" styleClass="right-form-admin" stylesheets="@../../../../../css/style.css">
                <children>
-                  <Label layoutX="61.0" layoutY="161.0" text="Bem-vindo ao nosso sistema!" textAlignment="CENTER">
-                     <font>
-                        <Font name="Bodoni MT Bold" size="22.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="99.0" layoutY="203.0" text="Insira suas credenciais">
+                  <Label id="label-informativo" layoutX="29.0" layoutY="178.0" text="Insira seus dados como administrador">
                      <font>
                         <Font name="Bodoni MT Bold" size="20.0" />
                      </font>
                   </Label>
-                  <PasswordField id="textSenha" layoutX="93.0" layoutY="339.0" prefHeight="38.0" prefWidth="206.0" promptText="Senha" styleClass="textSenha">
+                  <PasswordField id="textSenha" layoutX="107.0" layoutY="309.0" prefHeight="38.0" prefWidth="206.0" promptText="Senha" styleClass="textSenha">
                      <font>
                         <Font size="14.0" />
                      </font></PasswordField>
-                  <TextField id="textEmail" layoutX="93.0" layoutY="266.0" prefHeight="38.0" prefWidth="206.0" promptText="Email" styleClass="textEmail">
+                  <TextField id="textEmail" layoutX="107.0" layoutY="247.0" prefHeight="38.0" prefWidth="206.0" promptText="Email" styleClass="textSenha">
                      <font>
                         <Font size="14.0" />
                      </font></TextField>
-                  <Button id="button-login" accessibleText="Entrar na conta" layoutX="111.0" layoutY="408.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="169.0" styleClass="button-login" text="Login" textOverrun="WORD_ELLIPSIS" AnchorPane.topAnchor="408.0">
+                  <Button id="button-login-admin" accessibleText="Entrar na conta" layoutX="107.0" layoutY="390.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="170.0" styleClass="button-login-admin" text="Login" textOverrun="WORD_ELLIPSIS" AnchorPane.topAnchor="390.0">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>
@@ -61,12 +56,22 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <ImageView fitHeight="110.0" fitWidth="105.0" layoutX="139.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="icon-user" fitHeight="110.0" fitWidth="105.0" layoutX="139.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" styleClass="icon-user">
                      <image>
                         <Image url="@../../../../../icon/user.png" />
                      </image>
                   </ImageView>
-                  <Button id="button-cancelar" accessibleText="Entrar na conta" layoutX="111.0" layoutY="461.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="170.0" styleClass="button-cancelar" text="Cancelar" textOverrun="WORD_ELLIPSIS">
+                  <Label id="labelEmail" layoutX="28.0" layoutY="256.0" styleClass="labelEmail" text="E-mail">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label id="labelSenha" layoutX="28.0" layoutY="318.0" styleClass="labelSenha" text="Senha">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button id="button-cancelar" accessibleText="Entrar na conta" layoutX="107.0" layoutY="449.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="170.0" styleClass="button-cancelar" text="Cancelar" textOverrun="WORD_ELLIPSIS">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>
@@ -74,16 +79,6 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <Label id="labelEmail" layoutX="33.0" layoutY="275.0" styleClass="labelEmail" text="E-mail">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label id="labelSenha" layoutX="33.0" layoutY="348.0" styleClass="labelSenha" text="Senha">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
                </children>
                <cursor>
                   <Cursor fx:constant="CROSSHAIR" />

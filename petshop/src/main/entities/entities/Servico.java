@@ -2,21 +2,17 @@ package entities;
 
 public class Servico {
 
-    public enum ClassificacaoServico {
-        BANHO,
-        TOSA,
-        CONSULTA_VETERINÁRIA,
-        PASSEIO
-    }
-
     private int id;
     private String nome;
     private ClassificacaoServico classificacao;
 
-    public Servico(int id, String nome, ClassificacaoServico classificacao) {
-        this.id = id;
+    public Servico(String nome, ClassificacaoServico classificacao) {
         this.nome = nome;
         this.classificacao = classificacao;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getId() {
@@ -29,5 +25,12 @@ public class Servico {
 
     public ClassificacaoServico getClassificacao() {
         return classificacao;
+    }
+
+    public enum ClassificacaoServico {
+        BANHO,
+        TOSA,
+        CONSULTA_VETERINÁRIA,
+        PASSEIO
     }
 }

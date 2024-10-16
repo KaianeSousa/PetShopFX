@@ -4,8 +4,6 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
@@ -14,8 +12,12 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.LoginFXController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.MainController">
 
+   <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.LoginFXController">
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="557.0" prefWidth="766.0">
          <children>
@@ -40,25 +42,12 @@
                </children></AnchorPane>
             <AnchorPane layoutX="370.0" prefHeight="550.0" prefWidth="382.0" styleClass="right-form" stylesheets="@../../../../../css/style.css">
                <children>
-                  <Label layoutX="61.0" layoutY="161.0" text="Bem-vindo ao nosso sistema!" textAlignment="CENTER">
+                  <Label layoutX="41.0" layoutY="118.0" text="O que deseja fazer nesse sistema?" textAlignment="CENTER">
                      <font>
-                        <Font name="Bodoni MT Bold" size="22.0" />
+                        <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="99.0" layoutY="203.0" text="Insira suas credenciais">
-                     <font>
-                        <Font name="Bodoni MT Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <PasswordField layoutX="89.0" layoutY="348.0" prefHeight="38.0" prefWidth="206.0" promptText="Senha">
-                     <font>
-                        <Font size="14.0" />
-                     </font></PasswordField>
-                  <TextField layoutX="89.0" layoutY="275.0" prefHeight="38.0" prefWidth="206.0" promptText="Email">
-                     <font>
-                        <Font size="14.0" />
-                     </font></TextField>
-                  <Button id="buttonLogin" accessibleText="Entrar na conta" layoutX="132.0" layoutY="406.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="118.0" styleClass="buttom-login" text="Login" textOverrun="WORD_ELLIPSIS" AnchorPane.topAnchor="406.0">
+                  <Button fx:id="buttonLogin" accessibleText="Entrar na conta" layoutX="84.0" layoutY="197.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="232.0" styleClass="buttom-login" text="Entrar" textOverrun="WORD_ELLIPSIS" AnchorPane.topAnchor="197.0">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>
@@ -66,12 +55,7 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <ImageView fitHeight="110.0" fitWidth="105.0" layoutX="139.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../icon/user.png" />
-                     </image>
-                  </ImageView>
-                  <Button id="buttonCancelar" accessibleText="Entrar na conta" layoutX="132.0" layoutY="459.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="118.0" styleClass="buttom-cancelar" text="Cancelar" textOverrun="WORD_ELLIPSIS">
+                  <Button fx:id="buttonCadastro" accessibleText="Entrar na conta" layoutX="84.0" layoutY="275.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="232.0" styleClass="buttom-login" text="Cadastrar" textOverrun="WORD_ELLIPSIS">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>
@@ -79,6 +63,15 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
+                  <Button fx:id="buttonAdministrar" accessibleText="Entrar na conta" layoutX="84.0" layoutY="355.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="232.0" styleClass="buttom-login" text="Administrar" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+
                </children>
                <cursor>
                   <Cursor fx:constant="CROSSHAIR" />
@@ -90,4 +83,5 @@
          </children>
       </AnchorPane>
    </children>
+</StackPane>
 </StackPane>

@@ -4,21 +4,14 @@ public class Animal {
     private int id;
     private String nome;
     private String raca;
-    private String tipo;
     private String idade;
+    private String genero;
 
-    public Animal(int id, String nome, String raca, String tipo, String idade) {
-        this.id = id;
+
+    public Animal(String nome, String idade, String genero, String raca) {
         this.nome = nome;
         this.raca = raca;
-        this.tipo = tipo;
-        this.idade = idade;
-    }
-
-    public Animal(String nome, String idade, String tipo, String raca) {
-        this.nome = nome;
-        this.raca = raca;
-        this.tipo = tipo;
+        this.genero = genero;
         this.idade = idade;
     }
 
@@ -30,12 +23,13 @@ public class Animal {
         return nome;
     }
 
-    public String getRaca() {
-        return raca;
+    public String getGenero() {
+        return genero;
     }
 
-    public String getTipo() {
-        return tipo;
+
+    public String getRaca() {
+        return raca;
     }
 
     public String getIdade() {
@@ -50,12 +44,13 @@ public class Animal {
         this.nome = nome;
     }
 
-    public void setRaca(String raca) {
-        this.raca = raca;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+
+    public void setRaca(String raca) {
+        this.raca = raca;
     }
 
     public void setIdade(String idade) {

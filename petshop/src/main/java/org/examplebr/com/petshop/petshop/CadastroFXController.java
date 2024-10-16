@@ -38,7 +38,7 @@ public class CadastroFXController {
 
     @FXML
     private void initialize() {
-        // Verifica se buttonCadastrar não é nulo antes de adicionar o evento
+
         if (buttonCadastrar != null) {
             buttonCadastrar.setOnAction(this::handleCadastro);
         }

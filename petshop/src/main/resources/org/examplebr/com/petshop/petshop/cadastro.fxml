@@ -14,12 +14,13 @@
 <?import javafx.scene.text.Font?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.CadastroFXController">
+
    <children>
       <AnchorPane prefHeight="557.0" prefWidth="766.0">
          <children>
             <AnchorPane prefHeight="550.0" prefWidth="344.0" styleClass="left-form" stylesheets="@../../../../../css/style.css">
                <children>
-                  <ImageView fitHeight="231.0" fitWidth="279.0" layoutX="49.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="logo" fitHeight="231.0" fitWidth="279.0" layoutX="33.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true" styleClass="logo">
                      <cursor>
                         <Cursor fx:constant="E_RESIZE" />
                      </cursor>
@@ -27,24 +28,19 @@
                         <Glow />
                      </effect>
                      <image>
-                        <Image url="@../../../../../img/cat-dog.png" />
+                        <Image url="@../../../../../img/pet.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="140.0" layoutY="275.0" text="PetShop" textFill="#faad43">
-                     <font>
-                        <Font name="Century Gothic" size="24.0" />
-                     </font>
-                  </Label>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="343.0" prefHeight="550.0" prefWidth="409.0" styleClass="right-form" stylesheets="@../../../../../css/style.css">
+            <AnchorPane id="right-form" layoutX="343.0" prefHeight="550.0" prefWidth="409.0" styleClass="right-form" stylesheets="@../../../../../css/style.css">
                <children>
-                  <Label layoutX="115.0" layoutY="44.0" text="Insira seus dados" textAlignment="CENTER">
+                  <Label layoutX="128.0" layoutY="43.0" text="Insira seus dados para" textAlignment="CENTER">
                      <font>
-                        <Font size="20.0" />
+                        <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Button fx:id="buttonCadastrar" layoutX="129.0" layoutY="424.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="123.0" styleClass="buttom-login" text="Cadastrar" textOverrun="WORD_ELLIPSIS">
+                  <Button id="button-cadastrar" fx:id="buttonCadastrar" layoutX="132.0" layoutY="421.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="170.0" styleClass="button-cadastrar" text="Cadastrar" textOverrun="WORD_ELLIPSIS">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>
@@ -52,36 +48,64 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <TextField fx:id="textNome" layoutX="97.0" layoutY="131.0" prefHeight="38.0" prefWidth="261.0" promptText="Nome">
+                  <TextField id="textNome" fx:id="textNome" layoutX="95.0" layoutY="131.0" prefHeight="38.0" prefWidth="261.0" promptText="Nome" styleClass="textCadastro">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="textEmail" layoutX="95.0" layoutY="293.0" prefHeight="38.0" prefWidth="262.0" promptText="Email">
+                  <TextField id="textEmail" fx:id="textEmail" layoutX="94.0" layoutY="293.0" prefHeight="38.0" prefWidth="262.0" promptText="Email" styleClass="textCadastro">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="textSenha" layoutX="95.0" layoutY="354.0" prefHeight="38.0" prefWidth="262.0" promptText="Senha">
+                  <TextField id="textSenha" fx:id="textSenha" layoutX="95.0" layoutY="345.0" prefHeight="38.0" prefWidth="262.0" promptText="Senha" styleClass="textCadastro">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="textEndereco" layoutX="96.0" layoutY="186.0" prefHeight="38.0" prefWidth="262.0" promptText="Endereço">
+                  <TextField id="textEndereco" fx:id="textEndereco" layoutX="96.0" layoutY="186.0" prefHeight="38.0" prefWidth="262.0" promptText="Endereço" styleClass="textCadastro">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="textTelefone" layoutX="95.0" layoutY="236.0" prefHeight="38.0" prefWidth="262.0" promptText="Telefone">
+                  <TextField id="textTelefone" fx:id="textTelefone" layoutX="95.0" layoutY="236.0" prefHeight="38.0" prefWidth="262.0" promptText="Telefone" styleClass="textCadastro">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="41.0" layoutY="142.0" text="Nome" />
-                  <Label layoutX="32.0" layoutY="196.0" text="Endereço" />
-                  <Label layoutX="32.0" layoutY="246.0" text="Telefone" />
-                  <Label layoutX="30.0" layoutY="303.0" text="E-mail" />
-                  <Label layoutX="30.0" layoutY="364.0" text="Senha" />
+                  <Label id="labelNome" layoutX="21.0" layoutY="150.0" styleClass="labelNome" text="Nome">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label id="labelEndereco" layoutX="21.0" layoutY="195.0" styleClass="labelEndereco" text="Endereço">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label id="labelTelefone" layoutX="23.0" layoutY="245.0" styleClass="labelTelefone" text="Telefone">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label id="labelEmail" layoutX="20.0" layoutY="302.0" styleClass="labelEmail" text="E-mail">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label id="labelSenha" layoutX="20.0" layoutY="354.0" styleClass="labelSenha" text="Senha">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label layoutX="144.0" layoutY="74.0" text="criar uma conta" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button id="button-cancelar" accessibleText="Entrar na conta" layoutX="132.0" layoutY="480.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="170.0" styleClass="button-cancelar" text="Cancelar" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
                </children>
                <cursor>
                   <Cursor fx:constant="CROSSHAIR" />

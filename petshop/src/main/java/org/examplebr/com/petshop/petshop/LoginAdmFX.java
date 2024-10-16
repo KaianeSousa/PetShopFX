@@ -7,18 +7,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CadastroFX extends Application {
+public class LoginAdmFX extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        
-        FXMLLoader fxmlLoader = new FXMLLoader(MainAplicattion.class.getResource("cadastro.fxml"));
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/examplebr/com/petshop/petshop/loginAdm.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 750, 550);
-        stage.setTitle("Cadastro");
+        stage.setTitle("Área do Administrador - PetShop");
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }

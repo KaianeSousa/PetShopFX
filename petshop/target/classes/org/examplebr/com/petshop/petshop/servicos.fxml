@@ -15,7 +15,8 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.CadastroFXController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.ServicosFXController">
+
    <children>
       <AnchorPane prefHeight="557.0" prefWidth="766.0">
          <children>
@@ -46,7 +47,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Button fx:id="buttonCadastrar" layoutX="187.0" layoutY="461.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="123.0" styleClass="buttom-login" text="Registrar" textOverrun="WORD_ELLIPSIS">
+                  <Button fx:id="buttonCadastrar" layoutX="187.0" layoutY="461.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="123.0" styleClass="buttom-registro" text="Registrar" textOverrun="WORD_ELLIPSIS">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>
@@ -54,17 +55,17 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <TextField id="textNome" fx:id="textNome" layoutX="73.0" layoutY="100.0" prefHeight="38.0" prefWidth="150.0" promptText="Nome">
+                  <TextField id="textNome" fx:id="textNome" layoutX="73.0" layoutY="100.0" prefHeight="38.0" prefWidth="159.0" promptText="Nome">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField id="textRaca" fx:id="textEndereco" layoutX="291.0" layoutY="100.0" prefHeight="38.0" prefWidth="150.0" promptText="Raça">
+                  <TextField id="textRaca" fx:id="textRaca" layoutX="291.0" layoutY="100.0" prefHeight="38.0" prefWidth="150.0" promptText="Raça">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField id="textSexo" fx:id="textTelefone" layoutX="291.0" layoutY="155.0" prefHeight="38.0" prefWidth="150.0" promptText="Idade">
+                  <TextField id="textIdade" fx:id="textIdade" layoutX="369.0" layoutY="155.0" prefHeight="38.0" prefWidth="72.0" promptText="Idade">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -79,13 +80,13 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="21.0" layoutY="164.0" text="Sexo">
+                  <Label id="label-genero" layoutX="21.0" layoutY="164.0" text="Gênero">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ComboBox id="generoBox" layoutX="73.0" layoutY="155.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione" />
-                  <Label layoutX="249.0" layoutY="164.0" text="Idade">
+                  <ComboBox id="generoBox" fx:id="generoBox" layoutX="73.0" layoutY="155.0" prefHeight="38.0" prefWidth="159.0" promptText="Selecione um gênero" />
+                  <Label layoutX="310.0" layoutY="164.0" text="Idade">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -95,8 +96,8 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <ComboBox id="servicosBox" layoutX="73.0" layoutY="265.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione o serviço" />
-                  <DatePicker layoutX="73.0" layoutY="319.0" prefHeight="38.0" prefWidth="150.0" />
+                  <ComboBox id="servicosBox" fx:id="servicosBox" layoutX="73.0" layoutY="265.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione o serviço" />
+                  <DatePicker id="datebox" fx:id="datebox" layoutX="73.0" layoutY="319.0" prefHeight="38.0" prefWidth="150.0" />
                   <Label layoutX="21.0" layoutY="328.0" text="Data">
                      <font>
                         <Font size="14.0" />
@@ -107,7 +108,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ComboBox id="servicosBox" layoutX="291.0" layoutY="265.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione o horário" />
+                  <ComboBox id="horaBox" fx:id="horaBox" layoutX="291.0" layoutY="265.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione o horário" />
                   <Label layoutX="251.0" layoutY="274.0" text="Hora">
                      <font>
                         <Font size="14.0" />
