@@ -14,12 +14,20 @@
         <junit.version>5.10.2</junit.version>
     </properties>
 
+
     <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>9.0.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>22.0.1</version>
         </dependency>
+
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
@@ -93,7 +101,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                org.examplebr.com.petshop.petshop/org.examplebr.com.petshop.petshop.HelloApplication
+                                org.examplebr.com.petshop.petshop/org.examplebr.com.petshop.petshop.MainAplicattion
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

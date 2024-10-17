@@ -1,45 +1,59 @@
-/*.custom-button {
-    -fx-background-color: #6677CC;  
-    -fx-text-fill: white;           
-    -fx-font-size: 14px;            
-    -fx-background-radius: 15px;    
-    -fx-padding: 10 20;             
-    -fx-border-color: #5A65AD;      
-    -fx-border-radius: 15px;        
-} 
-.custom-button:hover {
-    -fx-background-color: #5A65AD;  
-}
-
-.custom-button:pressed {
-    -fx-background-color: #3A4B87; 
-}*/
-
 
 .left-form {
     -fx-background-color: linear-gradient(to bottom right, #3564c4, #658cd9, #faad43 );
 }
 
 .right-form {
-    -fx-background-color: #c8ccff;
+    -fx-background-color: #CCD0FF;
 }
 
-.buttom-login {
-
-    -fx-background-color: #6677CC;  
+.button-login, .button-registro, .button-cadastrar {
+    -fx-background-color: #6E7FCF;
     -fx-text-fill: white;           
     -fx-font-size: 14px;            
     -fx-background-radius: 7px;
-    -fx-padding: 10 20;             
-    -fx-border-color: #5c69bd;      
+    -fx-padding: 10 20;
     -fx-border-radius: 7px;
 }
 
-.buttom-login:hover {
+.button-login:hover, .button-registro, .button-cadastrar{
     -fx-background-color: #5c69bd;
-
 }
 
-.buttom-login:pressed {
-    -fx-background-color: #293b7a;
+.button-cancelar{
+      -fx-background-color: #de2222;
+          -fx-text-fill: white;
+          -fx-font-size: 14px;
+          -fx-background-radius: 7px;
+          -fx-padding: 10 20;
+          -fx-border-radius: 7px;
+}
+.right-form-admin {
+    -fx-background-color: #FFEBD1;
+}
+.button-verAdmin, .button-login-admin, .button-admin {
+
+    -fx-background-color: #F19C29;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-background-radius: 7px;
+    -fx-padding: 10 20;
+    -fx-border-radius: 7px;
+}
+
+.button-voltar {
+        -fx-background-color: #e69721;
+        -fx-text-fill: white;
+        -fx-font-size: 14px;
+        -fx-background-radius: 7px;
+        -fx-padding: 10 20;
+        -fx-border-radius: 7px;
+}
+
+.button-verAdmin:hover, .button-login-admin, .button-admin, ..button-voltar  {
+    -fx-background-color: #fcdd80;
+}
+
+.button-verAdmin:pressed, .button-login-admin, .button-admin  {
+    -fx-background-color: #dd9c10;
 }
