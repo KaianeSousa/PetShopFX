@@ -22,11 +22,11 @@
 
 .button-cancelar{
       -fx-background-color: #de2222;
-          -fx-text-fill: white;
-          -fx-font-size: 14px;
-          -fx-background-radius: 7px;
-          -fx-padding: 10 20;
-          -fx-border-radius: 7px;
+        -fx-text-fill: white;
+        -fx-font-size: 14px;
+        -fx-background-radius: 7px;
+        -fx-padding: 10 20;
+        -fx-border-radius: 7px;
 }
 .right-form-admin {
     -fx-background-color: #FFEBD1;
@@ -56,4 +56,21 @@
 
 .button-verAdmin:pressed, .button-login-admin, .button-admin  {
     -fx-background-color: #dd9c10;
+}
+
+.button-delete{
+    -fx-background-color: #f43737;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 10 20;
+    
+
+}
+
+.button-edit{
+    -fx-background-color: #fa9c38;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 10 20;
+
 }

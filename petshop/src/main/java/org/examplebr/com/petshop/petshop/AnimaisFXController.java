@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
-import javafx.geometry.Insets;  // Importação correta para Insets
+import javafx.geometry.Insets;
 import repository.AnimalServiceRepository;
 
 import java.sql.SQLException;

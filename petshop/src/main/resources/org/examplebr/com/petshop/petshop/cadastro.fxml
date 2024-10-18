@@ -98,7 +98,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Button id="button-cancelar" accessibleText="Entrar na conta" layoutX="132.0" layoutY="480.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="170.0" styleClass="button-cancelar" text="Cancelar" textOverrun="WORD_ELLIPSIS">
+                  <Button id="button-cancelar" fx:id="buttonCancelar" accessibleText="Entrar na conta" layoutX="132.0" layoutY="480.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="170.0" styleClass="button-cancelar" text="Cancelar" textOverrun="WORD_ELLIPSIS">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>

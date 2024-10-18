@@ -24,13 +24,13 @@ public class ClienteRepository {
     }
 
     public void adicionarCliente(Cliente cliente) throws SQLException {
-        String sql = "INSERT INTO clientes (NOME, TELEFONE, EMAIL, ENDERECO, SENHA) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO clientes (NOME, ENDERECO, TELEFONE, EMAIL, SENHA) VALUES (?, ?, ?, ?, ?)";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, cliente.getNome());
-            stmt.setString(2, cliente.getTelefone());
-            stmt.setString(3, cliente.getEmail());
-            stmt.setString(4, cliente.getEndereco());
+            stmt.setString(2, cliente.getEndereco());
+            stmt.setString(3, cliente.getTelefone());
+            stmt.setString(4, cliente.getEmail());
             stmt.setString(5, cliente.getSenha());
             stmt.executeUpdate();
         }
@@ -46,9 +46,9 @@ public class ClienteRepository {
                 Cliente cliente = new Cliente(
                         rs.getInt("ID"),
                         rs.getString("NOME"),
+                        rs.getString("ENDERECO"),
                         rs.getString("TELEFONE"),
                         rs.getString("EMAIL"),
-                        rs.getString("ENDERECO"),
                         rs.getString("SENHA")
                 );
                 clientes.add(cliente);
@@ -58,13 +58,13 @@ public class ClienteRepository {
     }
 
     public void atualizarCliente(Cliente cliente) throws SQLException {
-        String sql = "UPDATE clientes SET NOME = ?, TELEFONE = ?, EMAIL = ?, ENDERECO = ?, SENHA = ? WHERE ID = ?";
+        String sql = "UPDATE clientes SET NOME = ?, ENDERECO = ?, TELEFONE = ?, EMAIL = ?, SENHA = ? WHERE ID = ?";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, cliente.getNome());
-            stmt.setString(2, cliente.getTelefone());
-            stmt.setString(3, cliente.getEmail());
-            stmt.setString(4, cliente.getEndereco());
+            stmt.setString(2, cliente.getEndereco());
+            stmt.setString(3, cliente.getTelefone());
+            stmt.setString(4, cliente.getEmail());
             stmt.setString(5, cliente.getSenha());
             stmt.setInt(6, cliente.getId());
             stmt.executeUpdate();

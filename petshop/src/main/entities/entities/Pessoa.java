@@ -28,5 +28,21 @@ public abstract class Pessoa {
     public String getEmail() {
         return email;
     }
-}
 
+    // Métodos para definir novos valores
+    public void setNome(String novoNome) {
+        this.nome = novoNome;
+    }
+
+    public void setEndereco(String novoEndereco) {
+        this.endereco = novoEndereco;
+    }
+
+    public void setTelefone(String novoTelefone) {
+        this.telefone = novoTelefone;
+    }
+
+    public void setEmail(String novoEmail) {
+        this.email = novoEmail;
+    }
+}
