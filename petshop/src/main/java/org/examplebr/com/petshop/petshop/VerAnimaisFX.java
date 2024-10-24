@@ -6,13 +6,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class ServicosFX extends Application {
+public class VerAnimaisFX extends Application {
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("servicos.fxml"));
-        primaryStage.setTitle("Serviços Pet Shop");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.setResizable(false);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/examplebr/com/petshop/petshop/verAnimais.fxml"));
+        Parent root = loader.load();
+
+        VerAnimaisFXController controller = loader.getController();
+
+        primaryStage.setTitle("Animais Cadastrados");
+        primaryStage.setScene(new Scene(root, 920, 650));
         primaryStage.show();
     }
 

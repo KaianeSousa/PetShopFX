@@ -1,17 +1,23 @@
 package org.examplebr.com.petshop.petshop;
 
 import entities.Cliente;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import repository.ClienteRepository;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
@@ -36,12 +42,17 @@ public class VerClientesFXController {
     private Button buttonDelete;
     @FXML
     private Button buttonEdit;
+    @FXML
+    private Button buttonVerAnimais;
+    @FXML
+    private Button buttonVoltar;
 
     private final ClienteRepository clienteRepository = new ClienteRepository();
     private final ObservableList<Cliente> clienteList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
+
         configurarColunas();
         carregarClientes();
     }
@@ -67,7 +78,7 @@ public class VerClientesFXController {
     }
 
     @FXML
-    private void handleDeleteAction() {
+    private void DeleteAction() {
         Cliente clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
         if (clienteSelecionado != null) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -92,10 +103,9 @@ public class VerClientesFXController {
     }
 
     @FXML
-    private void handleEditAction() {
+    private void EditAction() {
         Cliente clienteSelecionado = tableViewClientes.getSelectionModel().getSelectedItem();
         if (clienteSelecionado != null) {
-
             String novoNome = solicitarInput("Editar Cliente", "Novo Nome:", clienteSelecionado.getNome());
             if (novoNome == null || novoNome.trim().isEmpty()) {
                 return;
@@ -122,7 +132,6 @@ public class VerClientesFXController {
             clienteSelecionado.setEmail(novoEmail);
 
             try {
-
                 clienteRepository.atualizarCliente(clienteSelecionado);
                 tableViewClientes.refresh();
                 exibirMensagem("Sucesso", "Cliente atualizado com sucesso!", Alert.AlertType.INFORMATION);
@@ -133,6 +142,35 @@ public class VerClientesFXController {
         } else {
             exibirMensagem("Atenção", "Nenhum cliente selecionado.", Alert.AlertType.WARNING);
         }
+    }
+
+    @FXML
+    private void VerAnimaisAction() {
+        Platform.runLater(() -> {
+            try {
+                Stage stage = new Stage();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("verAnimais.fxml"));
+                Parent root = loader.load();
+                stage.setTitle("Ver Animais");
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+                exibirMensagem("Erro", "Erro ao abrir a janela de Animais: " + e.getMessage(), Alert.AlertType.ERROR);
+            }
+        });
+    }
+
+    @FXML
+    private void VoltarAction() {
+        Platform.runLater(() -> {
+            try {
+                MainAplicattion.changeScene("main.fxml");
+            } catch (IOException e) {
+                e.printStackTrace();
+                exibirMensagem("Erro", "Erro ao voltar para a tela inicial: " + e.getMessage(), Alert.AlertType.ERROR);
+            }
+        });
     }
 
     private String solicitarInput(String titulo, String mensagem, String valorAtual) {

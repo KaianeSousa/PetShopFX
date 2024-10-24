@@ -7,8 +7,6 @@ import entities.Agendamento;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 public class AnimalServiceRepository {
 
@@ -17,78 +15,58 @@ public class AnimalServiceRepository {
         String sqlInsertServico = "INSERT INTO servicos (nome, classificacao) VALUES (?, ?)";
         String sqlInsertAgendamento = "INSERT INTO agendamentos (animal_id, servico_id, data, horario) VALUES (?, ?, ?, ?)";
 
+        // Verifique se a data do agendamento é nula
+        if (agendamento.getData() == null) {
+            throw new SQLException("Data do agendamento não pode ser nula.");
+        }
+
         LocalDate dataAgendamento = agendamento.getData().toLocalDate();
         String dataFormatada = dataAgendamento.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-
-        if (dataFormatada == null || dataFormatada.isEmpty()) {
-            throw new SQLException("Data do agendamento não pode ser nula ou vazia.");
-        }
 
         try (Connection connection = ConectarBancoDeDados.getConnection()) {
             connection.setAutoCommit(false);
 
-            try (PreparedStatement stmtAnimal = connection.prepareStatement(sqlInsertAnimal, Statement.RETURN_GENERATED_KEYS);
-                 PreparedStatement stmtServico = connection.prepareStatement(sqlInsertServico, Statement.RETURN_GENERATED_KEYS);
-                 PreparedStatement stmtAgendamento = connection.prepareStatement(sqlInsertAgendamento)) {
-
+            try (PreparedStatement stmtAnimal = connection.prepareStatement(sqlInsertAnimal, Statement.RETURN_GENERATED_KEYS)) {
                 stmtAnimal.setString(1, animal.getNome());
                 stmtAnimal.setString(2, animal.getRaca());
-                stmtAnimal.setString(3, animal.getIdade());
-                stmtAnimal.setString(4, animal.getGenero());
+                stmtAnimal.setString(3, animal.getGenero());
+                stmtAnimal.setInt(4, Integer.parseInt(animal.getIdade()));
                 stmtAnimal.executeUpdate();
 
-                ResultSet rsAnimal = stmtAnimal.getGeneratedKeys();
-                if (!rsAnimal.next()) {
-                    throw new SQLException("Falha ao obter o ID do animal.");
+                try (ResultSet generatedKeys = stmtAnimal.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        long animalId = generatedKeys.getLong(1);
+
+                        try (PreparedStatement stmtServico = connection.prepareStatement(sqlInsertServico, Statement.RETURN_GENERATED_KEYS)) {
+                            stmtServico.setString(1, servico.getNome());
+                            stmtServico.setString(2, servico.getClassificacao().name());
+                            stmtServico.executeUpdate();
+
+                            try (ResultSet generatedKeysServico = stmtServico.getGeneratedKeys()) {
+                                if (generatedKeysServico.next()) {
+                                    long servicoId = generatedKeysServico.getLong(1);
+
+                                    try (PreparedStatement stmtAgendamento = connection.prepareStatement(sqlInsertAgendamento)) {
+                                        stmtAgendamento.setLong(1, animalId);
+                                        stmtAgendamento.setLong(2, servicoId);
+                                        stmtAgendamento.setString(3, dataFormatada);
+                                        stmtAgendamento.setString(4, agendamento.getHorario().toString());
+                                        stmtAgendamento.executeUpdate();
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-                int animalId = rsAnimal.getInt(1);
-
-                stmtServico.setString(1, servico.getNome());
-                stmtServico.setString(2, servico.getClassificacao().toString());
-                stmtServico.executeUpdate();
-
-                ResultSet rsServico = stmtServico.getGeneratedKeys();
-                if (!rsServico.next()) {
-                    throw new SQLException("Falha ao obter o ID do serviço.");
-                }
-                int servicoId = rsServico.getInt(1);
-
-                stmtAgendamento.setInt(1, animalId);
-                stmtAgendamento.setInt(2, servicoId);
-                stmtAgendamento.setString(3, dataFormatada);
-                stmtAgendamento.setString(4, agendamento.getHorario().toString());
-                stmtAgendamento.executeUpdate();
-
                 connection.commit();
             } catch (SQLException e) {
                 connection.rollback();
-                throw new SQLException("Erro ao adicionar animal e serviço, transação revertida: " + e.getMessage(), e);
-            } finally {
-                connection.setAutoCommit(true);
+                throw e;
             }
         }
     }
 
-    public List<Animal> buscarTodosAnimais() throws SQLException, ClassNotFoundException {
-        String query = "SELECT id, nome, raca, genero, idade FROM animais";
-        List<Animal> listaAnimais = new ArrayList<>();
+    public void adicionarServico(Agendamento agendamento) {
 
-        try (Connection connection = ConectarBancoDeDados.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(query);
-             ResultSet resultSet = preparedStatement.executeQuery()) {
-
-            while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                String nome = resultSet.getString("nome");
-                String raca = resultSet.getString("raca");
-                String genero = resultSet.getString("genero");
-                String idade = resultSet.getString("idade");
-
-                Animal animal = new Animal(nome, idade, genero, raca);
-                animal.setId(id);
-                listaAnimais.add(animal);
-            }
-        }
-        return listaAnimais;
     }
 }

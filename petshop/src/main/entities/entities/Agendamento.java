@@ -13,9 +13,6 @@ public class Agendamento {
         this.horario = horario;
     }
 
-    public Agendamento(Animal animal, Servico servicoObj, LocalDate data, LocalTime parse) {
-    }
-
     public Date getData() {
         return data;
     }

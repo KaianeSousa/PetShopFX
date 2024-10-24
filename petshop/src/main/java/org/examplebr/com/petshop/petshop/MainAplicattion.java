@@ -8,26 +8,29 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainAplicattion extends Application {
-    static Stage primaryStage;
+
+    private static Stage stage;
 
     @Override
-    public void start(Stage stage) throws IOException {
-        primaryStage = stage;
-        System.out.println("Iniciando a aplicação...");
-        FXMLLoader fxmlLoader = new FXMLLoader(MainAplicattion.class.getResource("main.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 750, 550);
-        stage.setTitle("Tela Inicial");
-        stage.setScene(scene);
-        stage.show();
+    public void start(Stage primaryStage) {
+        stage = primaryStage;
+        try {
+            changeScene("main.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        primaryStage.setTitle("Pet Shop");
+        primaryStage.show();
     }
 
     public static void changeScene(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainAplicattion.class.getResource(fxml));
-        Scene scene = new Scene(fxmlLoader.load(), 750, 550);
-        primaryStage.setScene(scene);
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }
