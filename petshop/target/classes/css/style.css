@@ -16,23 +16,28 @@
     -fx-border-radius: 7px;
 }
 
-.button-login:hover, .button-registro, .button-cadastrar{
+.button-login:hover, .button-registro:hover, .button-cadastrar:hover{
     -fx-background-color: #5c69bd;
 }
 
 .button-cancelar{
-      -fx-background-color: #de2222;
+        -fx-background-color: #e92424;
         -fx-text-fill: white;
         -fx-font-size: 14px;
         -fx-background-radius: 7px;
         -fx-padding: 10 20;
         -fx-border-radius: 7px;
 }
+
+.button-cancelar:hover{
+    -fx-background-color: #fc0c0c;
+}
+
 .right-form-admin {
     -fx-background-color: #FFEBD1;
 }
-.button-verAdmin, .button-login-admin, .button-admin {
 
+.button-verAdmin, .button-login-admin, .button-admin {
     -fx-background-color: #F19C29;
     -fx-text-fill: white;
     -fx-font-size: 14px;
@@ -41,30 +46,16 @@
     -fx-border-radius: 7px;
 }
 
-.button-voltar {
-        -fx-background-color: #e69721;
-        -fx-text-fill: white;
-        -fx-font-size: 14px;
-        -fx-background-radius: 7px;
-        -fx-padding: 10 20;
-        -fx-border-radius: 7px;
+.button-verAdmin:hover, .button-login-admin:hover, .button-admin:hover{
+    -fx-background-color: #f6be06;
 }
 
-.button-verAdmin:hover, .button-login-admin, .button-admin, ..button-voltar  {
-    -fx-background-color: #fcdd80;
-}
-
-.button-verAdmin:pressed, .button-login-admin, .button-admin  {
-    -fx-background-color: #dd9c10;
-}
 
 .button-delete{
     -fx-background-color: #f43737;
     -fx-background-radius: 10px;
     -fx-border-radius: 10px;
     -fx-padding: 10 20;
-    
-
 }
 
 .button-edit{
@@ -72,5 +63,40 @@
     -fx-background-radius: 10px;
     -fx-border-radius: 10px;
     -fx-padding: 10 20;
-
 }
+
+.button-pet, 
+.button-services, 
+.ver-clientes, 
+.button-verAnimais, 
+.button-voltar {
+    -fx-background-color: linear-gradient(to bottom right,  #ffd363 5%,  #faad43 50%, #2dafe7, #467eef);
+    -fx-font-family: "Arial"; 
+    -fx-text-fill: white; 
+    -fx-padding: 10px; 
+    -fx-border-color: rgb(232, 237, 243);
+    -fx-border-radius: 5px;
+    -fx-border-width: 1.5px; 
+    -fx-background-radius: 5px; 
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 5, 0.0, 0, 2);
+}
+
+.button-pet:hover, 
+.button-services:hover, 
+.ver-clientes:hover, 
+.button-verAnimais:hover, 
+.button-voltar:hover {
+    -fx-background-color: rgb(81, 81, 235);
+    -fx-text-fill: rgb(241, 179, 62);
+}
+
+.button-pet:hover, .button-services:hover, .ver-clientes:hover, .button-verAnimais:hover, .button-voltar:hover {
+    -fx-background-color: linear-gradient(to bottom right, #3cec94, #3f73dd, #ffdd86 );
+}
+
+.table-animais, .table-clientes{
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-color: black;
+}
+

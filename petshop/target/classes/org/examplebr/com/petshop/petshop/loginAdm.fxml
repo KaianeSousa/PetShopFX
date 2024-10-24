@@ -14,12 +14,12 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.LoginAdmFXController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.LoginAdmFXController">
 
    <children>
       <AnchorPane prefHeight="557.0" prefWidth="766.0">
          <children>
-            <AnchorPane prefHeight="550.0" prefWidth="372.0" styleClass="left-form" stylesheets="@../../../../../css/style.css">
+            <AnchorPane prefHeight="650.0" prefWidth="372.0" styleClass="left-form" stylesheets="@../../../../../css/style.css">
                <children>
                   <ImageView id="logo" fitHeight="231.0" fitWidth="279.0" layoutX="53.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true" styleClass="logo">
                      <cursor>
@@ -32,23 +32,34 @@
                         <Image url="@../../../../../img/pet.png" />
                      </image>
                   </ImageView>
-               </children></AnchorPane>
-            <AnchorPane id="right-form-admin" layoutX="370.0" prefHeight="550.0" prefWidth="382.0" styleClass="right-form-admin" stylesheets="@../../../../../css/style.css">
+               </children>
+               <cursor>
+                  <Cursor fx:constant="DISAPPEAR" />
+               </cursor></AnchorPane>
+            <AnchorPane id="right-form-admin" layoutX="370.0" prefHeight="650.0" prefWidth="548.0" styleClass="right-form-admin" stylesheets="@../../../../../css/style.css">
+               <cursor>
+                  <Cursor fx:constant="DISAPPEAR" />
+               </cursor>
+               <effect>
+                  <ColorAdjust brightness="0.07" />
+               </effect>
                <children>
-                  <Label id="label-informativo" layoutX="29.0" layoutY="178.0" text="Insira seus dados como administrador">
+                  <Label id="label-informativo" layoutX="122.0" layoutY="192.0" text="Insira seus dados como administrador">
                      <font>
                         <Font name="Bodoni MT Bold" size="20.0" />
                      </font>
                   </Label>
-                  <PasswordField id="textSenha" layoutX="107.0" layoutY="309.0" prefHeight="38.0" prefWidth="206.0" promptText="Senha" styleClass="textSenha">
+                  <PasswordField id="textSenha" fx:id="textFieldSenha" layoutX="182.0" layoutY="347.0" prefHeight="45.0" prefWidth="280.0" promptText="Senha" styleClass="textSenha">
                      <font>
                         <Font size="14.0" />
-                     </font></PasswordField>
-                  <TextField id="textEmail" layoutX="107.0" layoutY="247.0" prefHeight="38.0" prefWidth="206.0" promptText="Email" styleClass="textSenha">
+                     </font>
+                  </PasswordField>
+                  <TextField id="textEmail" fx:id="textFieldEmail" layoutX="182.0" layoutY="263.0" prefHeight="45.0" prefWidth="280.0" promptText="Email" styleClass="textSenha">
                      <font>
                         <Font size="14.0" />
-                     </font></TextField>
-                  <Button id="button-login-admin" accessibleText="Entrar na conta" layoutX="107.0" layoutY="390.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="170.0" styleClass="button-login-admin" text="Login" textOverrun="WORD_ELLIPSIS" AnchorPane.topAnchor="390.0">
+                     </font>
+                  </TextField>
+                  <Button id="button-login-admin" fx:id="buttonLogin" accessibleText="Entrar na conta" layoutX="200.0" layoutY="453.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="180.0" styleClass="button-login-admin" text="Login" textOverrun="WORD_ELLIPSIS">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>
@@ -56,22 +67,22 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <ImageView id="icon-user" fitHeight="110.0" fitWidth="105.0" layoutX="139.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" styleClass="icon-user">
+                  <ImageView id="icon-user" fx:id="iconUser" fitHeight="110.0" fitWidth="105.0" layoutX="238.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" styleClass="icon-user">
                      <image>
                         <Image url="@../../../../../icon/user.png" />
                      </image>
                   </ImageView>
-                  <Label id="labelEmail" layoutX="28.0" layoutY="256.0" styleClass="labelEmail" text="E-mail">
+                  <Label id="labelEmail" fx:id="labelEmail" layoutX="103.0" layoutY="272.0" styleClass="labelEmail" text="E-mail">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
-                  <Label id="labelSenha" layoutX="28.0" layoutY="318.0" styleClass="labelSenha" text="Senha">
+                  <Label id="labelSenha" fx:id="labelSenha" layoutX="103.0" layoutY="347.0" styleClass="labelSenha" text="Senha">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
-                  <Button id="button-cancelar" accessibleText="Entrar na conta" layoutX="107.0" layoutY="449.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="170.0" styleClass="button-cancelar" text="Cancelar" textOverrun="WORD_ELLIPSIS">
+                  <Button id="button-cancelar" fx:id="buttonCancelar" accessibleText="Entrar na conta" layoutX="200.0" layoutY="545.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="180.0" styleClass="button-cancelar" text="Cancelar" textOverrun="WORD_ELLIPSIS">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>
@@ -80,14 +91,11 @@
                      </opaqueInsets>
                   </Button>
                </children>
-               <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
-               </cursor>
-               <effect>
-                  <ColorAdjust brightness="0.07" />
-               </effect>
             </AnchorPane>
          </children>
       </AnchorPane>
    </children>
+   <cursor>
+      <Cursor fx:constant="DISAPPEAR" />
+   </cursor>
 </StackPane>

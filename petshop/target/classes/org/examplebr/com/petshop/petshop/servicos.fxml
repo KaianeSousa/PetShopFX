@@ -6,7 +6,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
@@ -15,14 +14,14 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.ServicosFXController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.examplebr.com.petshop.petshop.ServicosFXController">
 
    <children>
       <AnchorPane prefHeight="557.0" prefWidth="766.0">
          <children>
-            <AnchorPane prefHeight="550.0" prefWidth="300.0" styleClass="left-form" stylesheets="@../../../../../css/style.css">
+            <AnchorPane prefHeight="650.0" prefWidth="323.0" styleClass="left-form" stylesheets="@../../../../../css/style.css">
                <children>
-                  <ImageView id="logo" fitHeight="82.0" fitWidth="272.0" layoutX="17.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="logo" fitHeight="82.0" fitWidth="272.0" layoutX="14.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
                      <cursor>
                         <Cursor fx:constant="E_RESIZE" />
                      </cursor>
@@ -33,85 +32,95 @@
                         <Image url="@../../../../../img/pet.png" />
                      </image>
                   </ImageView>
-               </children>
-            </AnchorPane>
-            <AnchorPane id="right-form" layoutX="300.0" prefHeight="550.0" prefWidth="454.0" styleClass="right-form" stylesheets="@../../../../../css/style.css">
-               <children>
-                  <Label layoutX="135.0" layoutY="35.0" text="Insira os dados do seu pet" textAlignment="CENTER">
+                  <Button id="button-pet" fx:id="buttonAnimal" layoutX="40.0" layoutY="318.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="243.0" styleClass="button-pet" text="Cadastrar Animal" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Brush Script MT Italic" size="20.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="button-services" fx:id="buttonServicos" layoutX="40.0" layoutY="393.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="243.0" styleClass="button-services" text="Serviços" textOverrun="WORD_ELLIPSIS">
                      <font>
                         <Font size="20.0" />
                      </font>
-                  </Label>
-                  <Button id="button-registro" fx:id="buttonCadastrar" layoutX="160.0" layoutY="447.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="170.0" styleClass="button-registro" text="Registrar" textOverrun="WORD_ELLIPSIS">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="button-pet" fx:id="buttonVoltar" layoutX="36.0" layoutY="466.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="250.0" styleClass="button-pet" text="Voltar" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="Brush Script MT Italic" size="20.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="DISAPPEAR" />
+               </cursor>
+            </AnchorPane>
+            <AnchorPane id="right-form" layoutX="320.0" prefHeight="650.0" prefWidth="600.0" styleClass="right-form" stylesheets="@../../../../../css/style.css">
+               <children>
+                  <Button id="button-registro" fx:id="buttonRegistrar" layoutX="239.0" layoutY="524.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="180.0" styleClass="button-registro" text="Registrar" textOverrun="WORD_ELLIPSIS">
                      <font>
                         <Font name="Calibri Bold" size="20.0" />
                      </font>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
-                  <TextField id="textNome" fx:id="textNome" layoutX="98.0" layoutY="100.0" prefHeight="38.0" prefWidth="123.0" promptText="Nome">
+                  <Label layoutX="279.0" layoutY="52.0" text="Serviços" textAlignment="CENTER">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="26.0" />
                      </font>
-                  </TextField>
-                  <TextField id="textRaca" fx:id="textRaca" layoutX="305.0" layoutY="100.0" prefHeight="38.0" prefWidth="123.0" promptText="Raça">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <TextField id="textIdade" fx:id="textIdade" layoutX="356.0" layoutY="155.0" prefHeight="38.0" prefWidth="72.0" promptText="Idade">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="23.0" layoutY="109.0" text="Nome">
+                  </Label>
+                  <ComboBox id="servicosBox" fx:id="servicosBox" layoutX="231.0" layoutY="158.0" prefHeight="46.0" prefWidth="231.0" promptText="Selecione o serviço">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ComboBox>
+                  <DatePicker id="datebox" fx:id="datebox" layoutX="231.0" layoutY="352.0" prefHeight="46.0" prefWidth="231.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </DatePicker>
+                  <Label layoutX="179.0" layoutY="365.0" text="Data">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="266.0" layoutY="109.0" text="Raça">
+                  <Label layoutX="169.0" layoutY="171.0" text="Serviços">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label id="label-genero" layoutX="25.0" layoutY="164.0" text="Gênero">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <ComboBox id="generoBox" fx:id="generoBox" layoutX="100.0" layoutY="155.0" prefHeight="38.0" prefWidth="159.0" promptText="Selecione um gênero" />
-                  <Label layoutX="296.0" layoutY="164.0" text="Idade">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="230.0" layoutY="225.0" text="Serviços" textAlignment="CENTER">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <ComboBox id="servicosBox" fx:id="servicosBox" layoutX="85.0" layoutY="284.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione o serviço" />
-                  <DatePicker id="datebox" fx:id="datebox" layoutX="85.0" layoutY="348.0" prefHeight="38.0" prefWidth="150.0" />
-                  <Label layoutX="27.0" layoutY="357.0" text="Data">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="23.0" layoutY="293.0" text="Serviços">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <ComboBox id="horaBox" fx:id="horaBox" layoutX="292.0" layoutY="284.0" prefHeight="38.0" prefWidth="150.0" promptText="Selecione o horário" />
-                  <Label layoutX="251.0" layoutY="293.0" text="Hora">
+                  <ComboBox id="horaBox" fx:id="horaBox" layoutX="231.0" layoutY="260.0" prefHeight="46.0" prefWidth="231.0" promptText="Selecione o horário">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ComboBox>
+                  <Label layoutX="179.0" layoutY="273.0" text="Hora">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                </children>
                <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
+                  <Cursor fx:constant="DISAPPEAR" />
                </cursor>
                <effect>
                   <ColorAdjust brightness="0.07" />
@@ -120,4 +129,7 @@
          </children>
       </AnchorPane>
    </children>
+   <cursor>
+      <Cursor fx:constant="DISAPPEAR" />
+   </cursor>
 </StackPane>
